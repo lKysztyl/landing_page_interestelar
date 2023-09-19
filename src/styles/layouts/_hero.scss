@@ -1,0 +1,13 @@
+@import 'src/styles/mixins/flex-mixins.scss';
+
+.hero {
+    background-image: url(../../src/img/Interstellar-Official-Poster-Banner.jpg);
+    @apply min-h-screen bg-no-repeat bg-contain text-center p-8 relative mx-auto;
+    @include flex-center();
+    
+    &__container {
+        @apply container mx-auto bg-lime-400 h-auto absolute top-72 text-center w-11/12;
+
+    } 
+
+} 
