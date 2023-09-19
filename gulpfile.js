@@ -2,27 +2,29 @@ const gulp = require('gulp');
 const sass = require ('gulp-sass')(require('sass'));
 const imagemin = require('gulp-imagemin');
 const shell = require('gulp-shell');
+const postcss = require('gulp-postcss');
+const tailwindcss = require('tailwindcss');
+const autoprefixer = require('autoprefixer');
 
-function runShellTerminal() {
+/*function runShellTerminal() {
     const commands = [
-        'npm run dev',
-        'npm run watch'
+        'npm run build'
     ];
 
     return gulp.src('.')
         .pipe(shell(commands.join(' && ')))
 }
+*/
 
-function compilleSass() {
-    return gulp.src('./src/styles/*.scss')
-        .pipe(sass({ outputStyle: 'compressed' }))
+function compileStyles() {
+    return gulp.src('./src/styles/**/*.scss')
+        .pipe(sass({ outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(postcss([tailwindcss, autoprefixer]))
         .pipe(gulp.dest('./dist/css'))
 };
 
 function watchFiles() {
-    gulp.watch('./src/styles/**/*.scss', runShellTerminal);
-    gulp.watch('./src/styles/**/*.css', runShellTerminal);
-    gulp.watch('./index.html', runShellTerminal );
+    gulp.watch(['./src/styles/**/*.scss', './src/styles/**/*.css', './index.html'], gulp.series(compileStyles));
 }
 
-exports.build = gulp.parallel(watchFiles);
+exports.build = gulp.series(watchFiles);  
