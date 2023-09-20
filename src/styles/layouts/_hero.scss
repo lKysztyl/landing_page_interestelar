@@ -1,13 +1,32 @@
 @import 'src/styles/mixins/flex-mixins.scss';
 
 .hero {
-    background-image: url(../../src/img/Interstellar-Official-Poster-Banner.jpg);
-    @apply min-h-screen bg-no-repeat bg-contain text-center p-8 relative mx-auto;
-    @include flex-center();
+    background-image: url(../../src/img/Interstellar-Official-Poster-Banner-PROMO-XLG-23SETEMBRO2014-02.jpg);
+    @apply min-h-screen bg-no-repeat bg-cover bg-scroll text-center p-4 relative mx-auto;
+    @include justify-center();
+    font-family: 'Orbitron', sans-serif;
+
     
     &__container {
-        @apply container mx-auto bg-lime-400 h-auto absolute top-72 text-center w-11/12;
-
+        @apply container mx-auto backdrop-blur-sm h-auto text-center w-11/12 text-white grid grid-cols-2;
+        
     } 
+
+    &__left__column { 
+        @apply pt-40;
+
+        .hero__card {
+
+            &__header {
+                @apply mt-40 ;
+                
+                .card__title {
+                    @apply text-5xl font-medium #{!important};
+                }
+            } 
+        }
+
+    }
+
 
 } 
