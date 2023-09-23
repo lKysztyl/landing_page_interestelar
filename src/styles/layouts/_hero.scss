@@ -1,9 +1,6 @@
-@import 'src/styles/mixins/flex-mixins.scss';
-
 .hero {
-    @apply m-auto relative;
+    @apply m-auto relative flex-center;
     font-family: 'Orbitron', sans-serif;
-    @include flex-center();
 
     .img__container {
         @apply w-full;
@@ -13,7 +10,83 @@
     }
 
     &__placeholder {
-        @apply w-full h-full absolute top-0 left-0 shadow-inner-smoke shadow-primary ;
-    }
+        @apply w-full h-full absolute top-0 left-0 shadow-inner-smoke shadow-primary;
 
-}                      
+        h1 {
+            @apply translate-center w-4/6;
+        }
+
+        &__metascore {
+            @apply w-full absolute backdrop-blur flex-between;
+            top: 96%;
+
+            .hero__metascore__critreview {
+                @apply flex-between;
+
+                &__critic-score {
+                    @apply flex-center;
+
+                    .hero__critic-score__critic-note {
+                        @apply w-20 h-20 flex justify-center items-center rounded-lg bg-green-400 text-2xl mr-3;
+                    }
+
+                    .hero__critic-score__mix-score {
+                        @apply grid grid-rows-sm-row grid-cols-3 space-y-2 w-96 h-20;
+
+                        .mix-score__container-porcente {
+                            @apply overflow-hidden whitespace-nowrap flex space-x-2 row-start-1 row-end-2 w-96;
+
+                            &__positive {
+                                @apply w-9/12 h-2.5 bg-green-500 rounded-l-full;
+                            }
+
+                            &__mixed {
+                                @apply w-2/12 h-2.5 bg-yellow-500;
+                            }
+
+                            &__negative {
+                                @apply w-1/12 h-2.5 bg-red-500 rounded-r-full; 
+                            }
+                        }
+                        
+                        .mix-score__container-review {
+                            @apply  text-white text-xs col-start-1 row-span-2 grid grid-rows-2;
+
+                            &__rating {
+                                @apply row-start-1 row-end-2 m-auto;
+                            }
+                            
+                            &__quantity {
+                                @apply row-start-2 m-auto;
+                            }
+                        }
+
+                        .mix-score__container-mixed {
+                            @apply  text-white text-xs col-start-2 row-span-2 grid grid-rows-2;
+
+                            &__rating {
+                                @apply row-start-1 row-end-2 m-auto;
+                            }
+                            
+                            &__quantity {
+                                @apply row-start-2 m-auto;
+                            }
+                        }
+
+                        .mix-score__container-negative {
+                            @apply  text-white text-xs col-start-3 row-span-2 grid grid-rows-2;
+
+                            &__rating {
+                                @apply row-start-1 row-end-2 m-auto;
+                            }
+                            
+                            &__quantity {
+                                @apply row-start-2 m-auto;
+                            }
+                        }
+                    }   
+                } 
+            }
+        } 
+    }  
+} 
