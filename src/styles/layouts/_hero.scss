@@ -5,7 +5,7 @@
     .img__container {
         @apply w-full;
         img {
-            @apply w-full h-137 bg-center m-auto bg-cover;
+            @apply w-full h-137 max-lg:h-full bg-center m-auto bg-cover;
         }
     }
 
@@ -17,11 +17,13 @@
         }
 
         &__metascore {
-            @apply w-full absolute backdrop-blur flex-between;
+            @apply w-full absolute backdrop-blur flex-between max-md:block max-lg:scale-75
+            max-lg:-left-15;
             top: 96%;
 
             .hero__metascore__critreview {
-                @apply flex-between;
+                @apply flex-between ;
+                scale: 0.8;
 
                 &__critic-score {
                     @apply flex-center;

@@ -10,7 +10,11 @@ module.exports = {
       spacing: {
         '137': '37rem',
         'ul-sm': '1px',
-        '750': '45rem', 
+        '750': '45rem',
+        '15': '3.7rem' 
+      },
+      scale: {
+        'sm': '0.5',
       },
       boxShadow: {
         'inner-smoke': 'inset 0 -10px 50px 70px rgb(0 0 0 / 0.05)',

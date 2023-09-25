@@ -1,7 +1,7 @@
 
 
 .conteudo {
-    @apply grid grid-cols-2 max-lg:grid-cols-1;
+    @apply grid grid-cols-2 max-lg:grid-cols-1 max-lg:mt-4;
 
     &__info {
         @apply mt-20 w-full h-full max-lg:mb-80;
@@ -25,7 +25,7 @@
             }
 
             .trailer__iframe {
-                @apply p-12  m-auto;
+                @apply p-12 max-lg:p-0  m-auto;
                 .iframe { 
                     @apply w-full h-96;
                 }
