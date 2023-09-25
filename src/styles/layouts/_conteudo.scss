@@ -22,6 +22,7 @@
 
             .trailer__title {
                 @apply text-5xl text-white text-center m-auto p-4 mt-4;
+                font-family: 'Orbitron', sans-serif;
             }
 
             .trailer__iframe {
@@ -37,6 +38,7 @@
 
             .conteudo__title-sinopse {
                 @apply text-5xl text-orange-700 text-center m-auto pb-8;
+                font-family: 'Orbitron', sans-serif;
             }
         }
     }
