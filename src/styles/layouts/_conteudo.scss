@@ -4,19 +4,19 @@
     @apply grid grid-cols-2 max-lg:grid-cols-1;
 
     &__info {
-        @apply mt-20 w-full h-full;
+        @apply mt-20 w-full h-full max-lg:mb-80;
         
         .info__container-img {
             @apply w-full h-2 pt-12;
 
             img {
-                @apply w-full h-750;
+                @apply w-full h-750 max-lg:h-80;
             }
         }
     }
 
     &__trailer {
-        @apply mt-20 w-full h-full;
+        @apply mt-20 w-full h-full order-1;
 
         &__container {
 
@@ -26,7 +26,7 @@
 
             .trailer__iframe {
                 @apply p-12  m-auto;
-                .iframe {
+                .iframe { 
                     @apply w-full h-96;
                 }
             }
