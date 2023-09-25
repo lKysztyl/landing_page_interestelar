@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "watchFiles": "gulp watchFiles",
     "build": "gulp build",
     "watch": "npx tailwindcss -i ./src/styles/main.scss -o ./dist/css/main.css --watch"
   },

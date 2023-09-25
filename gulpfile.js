@@ -17,16 +17,21 @@ const autoprefixer = require('autoprefixer');
 */
 
 function compileStyles() {
-    return gulp.src('./src/styles/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
+    return gulp.src('./src/styles/main.scss')
+        .pipe(sass({ outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(postcss([tailwindcss, autoprefixer]))
         .pipe(gulp.dest('./dist/css'))
 };
 
-//{ outputStyle: 'compressed'}
+function compileImg() {
+    return gulp.src('./src/img/**/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('./dist/img'))
+}
 
 function watchFiles() {
     gulp.watch(['./src/styles/**/*.scss', './src/styles/**/*.css', './index.html'], gulp.series(compileStyles));
 }
 
-exports.build = gulp.series(watchFiles);  
+exports.watchFiles = gulp.series(watchFiles);
+exports.build = gulp.series(compileStyles, compileImg);  
